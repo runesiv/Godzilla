@@ -1,0 +1,72 @@
+%Template taken from: American Institute of Physics [2009]
+%   Version 4.1 of REVTeX, October 2009
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex  file
+%  2)  bibtex file
+%  3)  latex  file
+%  4)  latex  file
+
+\documentclass[%
+ aip,
+%jmp,%
+%bmf,%
+%sd,%
+rsi,%
+ amsmath,amssymb,
+%preprint,%
+ reprint,%
+%author-year,%
+%author-numerical,%
+]{revtex4-1}
+
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+
+\begin{document}
+
+\title[4th 4DSpace Workshop -- Team Godzilla]{Final report:\\Plasma disturbance around a space craft}
+
+\author{S. Farhad} 
+\author{A. Piterskaya}
+\author{R. Sivertsen}
+\author{G. Svenn}
+\affiliation{University of Oslo}
+
+\author{T. Kiriyama}
+\author{Y. Xue}
+\affiliation{Kobe University}
+
+\date{\today}
+
+\begin{abstract}
+ABSTRACT
+\end{abstract}
+
+\maketitle
+
+\section{\label{sec:intro} Introduction}
+
+\section{\label{sec:theory} Theory}
+
+\section{\label{sec:numsetup} Numerical Setup}
+
+\subsection{Leap frog algorithm}
+
+\subsection{Numerical parameters}
+
+\section{Result}
+
+\section{Discussion}
+
+\section{Summary}
+
+\nocite{*}
+\bibliography{GodzillaResources}% Produces the bibliography via BibTeX.
+
+\end{document}
