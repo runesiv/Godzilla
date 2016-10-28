@@ -30,7 +30,7 @@ preprint]{revtex4-1}
 
 \begin{abstract}
 \textbf{Abstract.}\\
-The QubeSat will be put in low earth orbit (LEO) by 2017. We examined the photo emission effect on the satellite using 3 dimensional PIC simulations. Mainly potential changes and changes in the wake have been examined. We have also partially studied the effect of plasma density. There is no noticeable changes to the wake for the different photo emission current densities, some changes when altering the plasma density. The new density simulation may not be accurate because the simulation time was too short and we probably did not reach the floating potential of the spacecraft. We get a rise in the potential for increased photo emission current density, and estimation of error show it to be significant. New simulations with new current and densities could check if our linear fit actually will fit or not.
+The QubeSat will be put in low earth orbit (LEO) by 2017. We examined the photo emission effect on the satellite using 3 dimensional PIC simulations. Mainly potential changes and changes in the wake have been examined. We have also partially studied the effect of plasma density. There is no noticeable changes to the wake for the different photo emission current densities, some changes do occur when altering the plasma density. The new density simulation may not be accurate because the simulation time was too short and we probably did not reach the floating potential of the spacecraft. We get a rise in the potential for increased photo emission current density, and estimation of error show it to be significant. New simulations with new current and densities could check if our linear fit actually will fit or not.
 \end{abstract}
 
 \maketitle
@@ -50,65 +50,36 @@ Many papers have been written about PIC models, spacecrafts in plasma, the effec
 
 \section{\label{sec:theory} Theory}
 
-%GREGER
+In this report we are using some general plasma parameters, so here follows a recap of their definition.\\
 
-\subsubsection*{Mach number}
- is the parameter that shows the ratio between the flow velocity and speed of sound. It can be estimated as
-\begin{align}
-\mathcal{M} &= \frac{v_D}{c_s}\label{eq:Mach}
-\end{align}
-where $v_D$ is the drift velocity and $c_s$ the electron sound speed.\\
-
-\subsubsection*{Mach Angle}
-is half the angle of the mach cone
-\begin{align}
-\alpha = sin^{-1}(\frac{1}{\mathcal{M}})\label{eq:MachAngle}
-\end{align}
-where $\mathcal{M}$ is the Mach number. 
-
-\subsubsection*{Ion sound speed}
-"is the speed of the longitudinal waves resulting from the mass of the ions and the pressure of the electrons"
+We have firstly two definition of the ion sound speed, one with or without adiabatic terms. They are defined respectively as 
 \begin{align}
 c_s &= \sqrt{\frac{k T_i}{m_i}}\label{eq:IonSpeed}
 \end{align}
-where $k$ is the Boltzmann's constant, $T_i$ the ion temperature and $m_i$ is the reduced ion mass.
-
-\subsubsection*{Adiabatic ion sound speed}
-is ion sound speed with an adiabatic expansion
+and
 \begin{align}
 c_{s,II} &= \sqrt{\left[ \frac{kT_e + \gamma k T_i}{m_i}\right]}\label{eq:IonSpeed2}
 \end{align}
-where $\gamma$ is the adiabatic index, in this case 5/3.
+where $\gamma$ is the adiabatic index, in this case 5/3. $T_i$ is the ion temperature, while $k$ is the Boltzmann constant.
 
-\subsubsection*{Plasma frequency}
-\begin{equation}
-\label{plasmafreq}
-\omega_{pe} = \sqrt{\frac{n_e e^2}{m \epsilon_0}}
-\end{equation}
-is a result of displacement and overshooting of electrons, where $n_e$ is the plasma number density in $\mathrm{m}^{-3}$, $e$ is the electron electric charge, $m$ is the electron mass and $\epsilon_0$ is the permittivity of vacuum. \\
-The temporal change of the spacecraft potential will be affected by the plasma frequencies. When a neutrally charged object such as spacecraft is subjected to plasma, the incoming ions and electrons will charge the object. Due to the higher velocities of electrons, the body will become negatively charged. It will reach an equilibrium where the flux of ions and electrons are the same through the objects wall, which is known as the floating potential.\\
+The Mach number similarly is defined as
+\begin{align}
+\mathcal{M} &= \frac{v_D}{c_s}\label{eq:Mach}
+\end{align}
+where $v_D$ is the plasma drift velocity and $c_s$ the electron sound speed. It has a corresponding Mach angle
+\begin{align}
+\alpha = sin^{-1}(\frac{1}{\mathcal{M}})\label{eq:MachAngle}.
+\end{align}
 
-\subsubsection*{Gyroradius}
-is the radius of the circular electron motion traveling with the magnetic field
+Lastly we can define the electron plasma frequency and gyro-radius used in our report. The plasma frequency is
+\begin{align}
+\omega_{pe} = \sqrt{\frac{n_e e^2}{m \epsilon_0}}\label{plasmafreq}
+\end{align}
+where $\epsilon_0$ is the vacuum permittivity. And we define the gyro-radius as 
 \begin{align}
 r_e &= \frac{m_e v_\perp}{|q| B}\label{eq:gyroradius}
 \end{align}
-where $m_e$ is the electron mass, $v_\perp$ the velocity perpendicular to the magnetic field, $q$ the charge of the electron and $B$ the magnetic flux density.
-
-
-% General plasma assumptions, supersonic etc.
-
-% Domain of simulation, paper P7.
-
-% how the wake should look
-
-% charging of the wake
-
-\subsubsection*{Debye length}
-The debye length is the radius of the debye shield...
-\begin{align}
-\lambda_D &= \sqrt{\frac{k T}{4 \pi n e^2}}\label{eq:Debye}
-\end{align}
+$v_\perp$ the velocity perpendicular to the magnetic field and is $B$ the magnetic flux density. In our simulation we let the magnetic field propagate in positive z-direction, while the plasma flows in the positive x-direction, as defined in FIG \ref{fig:model}.
 
 \subsection{Floating potential}
 
@@ -163,6 +134,8 @@ We want to simulate the situation for the satellite shown in FIG. \ref{fig:model
  We will in other words have a grid size of 128 in each direction, where we have a plasma flow in negative x-direction, as shown in the figure. The grid size is chosen such that we get stable potential of the spacecraft, while also saving processing power. It is also smaller than the Debye length, so the time scale is correct. The spacecraft is placed in the middle, and we let the sunlight hit the satellite in the opposite direction of the constant plasma flow, which will give the photo emission directly to the wake.\\
  
  We will do three simulations where we change current of the electrons from the photo emission, $j_{ph} = 0, 10^{-5}$ A/m$^3$ and $10^{-4}$ A/m$^3$. We shall also run a simulation without any flow, and one simulation with decreased electron density, using a estimate derived from Brekke.\cite{Brekke} to be $n_e = 10^{-4}$ particles/cm$^3$.
+ 
+Using the definition above, we will then have a supersonic plasma; and we will have the debye length and the probe length of the same order. The gyroradius will however be one order larger then the probe radius (5 cm). According to the similar study with the hybrid model\cite{P7}, we are then in either the complex domain with result similar to a model with infinite gyroradius (OML) or in the dust regime, $R_p \approx \lambda_d \approx r_e$. We can then compare our result to the OML-model discussed above, and in the case where this is not valid; rather compare to the empiracal result from their study.
 
 \section{Result}
 
@@ -200,11 +173,11 @@ We looked first at how the photo emission effected our simulation, then changed 
 \label{fig:potential_alongx}}
 \end{figure*}
 
-FIG \ref{fig:profile_nocurrent} shows the wake profile behind spacecraft, not extending in the perpendicular direction along the field lines. If we add photoemission,  shown in FIG, \ref{fig:profile_current}, we see that the wake formation is nearly the same. We have here the higher current, while also the low current will have similar wake profile.\\
+FIG \ref{fig:profile_nocurrent} shows the wake profile behind spacecraft, not extending in the perpendicular direction along the field lines. If we add photo-emission,  shown in FIG, \ref{fig:profile_current}, we see that the wake formation is nearly the same. We have here the higher current, while also the low current will have similar wake profile.\\
 
-FIG \ref{fig:potential_alongx} shows the potential near spacecraft for the simulation with different photo emission current, and without flow. First, it can be seen that the spacecraft potential for the simulations with flow is higher than without flow. Second, the spacecraft potential with more photo emission is higher. This difference between the potential for the spacecraft  with photo emission, j$_{ph} = 10^{-4}$ A/m$^3$ and  j$_{ph} = 10^{-5}$ A/m$^3$ is larger than that between without photo emission and  j$_{ph} = 10^{-5}$ A/m$^3$. We can see an effect of the photo electrons on the potential.\\
+FIG \ref{fig:potential_alongx} shows the potential near spacecraft for the simulation with different photo emission current, and without flow. First, it can be seen that the spacecraft potential for the simulations with flow is higher than without flow. Second, the spacecraft potential with more photo emission is higher. This difference between the potential for the spacecraft  with photo-emission, j$_{ph} = 10^{-4}$ A/m$^3$ and  j$_{ph} = 10^{-5}$ A/m$^3$ is larger than that between without photo emission and  j$_{ph} = 10^{-5}$ A/m$^3$. We can see an effect of the photo electrons on the potential.\\
 
-Assuming a linear effect, the potential should then be depedent of the photoemission as:
+Assuming a linear effect, the potential should then be dependent on the photo-emission as:
 \begin{align*}
 V\left(j_{ph}\right) &= V_0 + c_1\cdot j_{ph} + c_2\cdot j_{ph}^2
 \end{align*}
@@ -309,7 +282,7 @@ In other words, a relative error of 81\%.\\
 
 We also found the Mach angle. Measuring using the density gradient as boundary, this angle was found to be 18.43 degrees. If we had the angle from the start of the rocket to the end of the visible wake, the angle was then 13.25 degrees. The true Mach angle for our simulation should be between these two values.\\
 
-We calculate the Mach number and then the theoretical Mach angle, using Eq. \ref{eq:Mach} and Eq. \ref{eq:MachAngle}. We also expand the ion sound velocity to the adiabatic expression in Eq. \ref{eq:Mach2}.
+We calculate the Mach number and then the theoretical Mach angle, using Eq. \ref{eq:Mach} and Eq. \ref{eq:MachAngle}. We also expand the ion sound velocity to the adiabatic expression in Eq. \ref{eq:IonSpeed2}.
 \begin{align*}
 c_{s,I} &= 9536.1417 \, \, \text{m/s}\\
 c_{s,II} &= \sqrt{\frac{kT_e + \frac{5}{3} k T_i}{ M_i}} = 12911.997 \, \, \text{m/s}\\
@@ -324,7 +297,7 @@ The adiabatic version of the Mach angle should be the closest to what we want. W
 \Delta \alpha &= \frac{15.86 ^{\circ}- 18.08^{\circ}}{18.08^{\circ}} = 0.123.
 \end{align*}
 
-We found the plasma frequency by looking at the frequency of the spacecraft potential in time, which was $\omega_{sim} = 19.28\times 10^{6}$ rad/s. Using Eq. \ref{eq:gyroradius}, the theoretical value is $17.84\times 10^{6}$ rad/s. This correspond to a relative error of 8.1\%.
+We found the plasma frequency by looking at the frequency of the spacecraft potential in time, which was $\omega_{sim} = 19.28\times 10^{6}$ rad/s. Using Eq. \ref{eq:plasmafreq}, the theoretical value is $17.84\times 10^{6}$ rad/s. This correspond to a relative error of 8.1\%.
 
 \section{Discussion}
 
