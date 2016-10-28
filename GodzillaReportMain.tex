@@ -29,8 +29,7 @@ preprint]{revtex4-1}
 \date{\today}
 
 \begin{abstract}
-\textbf{Abstract.}\\
-The QubeSat will be put in low earth orbit (LEO) by 2017. We examined the photo emission effect on the satellite using 3 dimensional PIC simulations. Mainly potential changes and changes in the wake have been examined. We have also partially studied the effect of plasma density. There is no noticeable changes to the wake for the different photo emission current densities, some changes do occur when altering the plasma density. The new density simulation may not be accurate because the simulation time was too short and we probably did not reach the floating potential of the spacecraft. We get a rise in the potential for increased photo emission current density, and estimation of error show it to be significant. New simulations with new current and densities could check if our linear fit actually will fit or not.
+The QubeSat will be put in low earth orbit (LEO) by 2017, and we wanted in this paper to look at how photemission could effect the sattelite. We simulated the satellite using 3 dimensional particle-in-cell (PIC), and looked mainly on the changes of the potential and the wake profile in both longitudunal and transversal plane of the plasma flow. We have also partially studied the effect on plasma density. There was not noticeable effect on the shape of the wake for the different photo emission current densities, while this was observed altering the plasma density. This could however be because of the short simulation time, and we probably did not converge enough to the the equilibrium potential. We saw a rise in the potenial due to photoemission, and studies of theorical effect seems to indicate this effect to be significant. 
 \end{abstract}
 
 \maketitle
@@ -165,7 +164,7 @@ We looked first at how the photo emission effected our simulation, then changed 
 \includegraphics[scale=0.5]{rho4_sidepicture.png}
 \caption{The profile from the side of the spacecraft, and it was symmetric in both planes.}
 \end{subfigure}
-\caption{The situation when we have photo-emission, in this case j$_{ph} = 1E-5$ A/m$^3$. The wake in this figure is similar to the one in FIG. \ref{fig:profile_nocurrent}. \label{fig:profile_current}}
+\caption{The situation when we have photo-emission, in this case j$_{ph} = 10^{-5}$ A/m$^3$. The wake in this figure is similar to the one in FIG. \ref{fig:profile_nocurrent}. \label{fig:profile_current}}
 \end{figure*}
 
 \begin{figure*}
@@ -174,9 +173,9 @@ We looked first at how the photo emission effected our simulation, then changed 
 \label{fig:potential_alongx}}
 \end{figure*}
 
-FIG \ref{fig:profile_nocurrent} shows the wake profile behind spacecraft, not extending in the perpendicular direction along the field lines. If we add photo-emission,  shown in FIG, \ref{fig:profile_current}, we see that the wake formation is nearly the same. We have here the higher current, while also the low current will have similar wake profile.\\
+FIG. \ref{fig:profile_nocurrent} shows the wake profile behind spacecraft, not extending in the perpendicular direction along the field lines. If we add photo-emission,  shown in FIG. \ref{fig:profile_current}, we see that the wake formation is nearly the same. We have here the higher current, while also the low current will have similar wake profile.\\
 
-FIG \ref{fig:potential_alongx} shows the potential near spacecraft for the simulation with different photo emission current, and without flow. First, it can be seen that the spacecraft potential for the simulations with flow is higher than without flow. Second, the spacecraft potential with more photo emission is higher. This difference between the potential for the spacecraft  with photo-emission, j$_{ph} = 10^{-4}$ A/m$^3$ and  j$_{ph} = 10^{-5}$ A/m$^3$ is larger than that between without photo emission and  j$_{ph} = 10^{-5}$ A/m$^3$. We can see an effect of the photo electrons on the potential.\\
+FIG. \ref{fig:potential_alongx} shows the potential near spacecraft for the simulation with different photo emission current, and without flow. First, it can be seen that the spacecraft potential for the simulations with flow is higher than without flow. Second, the spacecraft potential with more photo emission is higher. This difference between the potential for the spacecraft  with photo-emission, j$_{ph} = 10^{-4}$ A/m$^3$ and  j$_{ph} = 10^{-5}$ A/m$^3$ is larger than that between without photo emission and  j$_{ph} = 10^{-5}$ A/m$^3$. We can see an effect of the photo electrons on the potential.\\
 
 Assuming a linear effect, the potential should then be dependent on the photo-emission as:
 \begin{align*}
@@ -198,16 +197,16 @@ Which had a normalized residual of 4.1541e-16. A linear term was not enough.\\
 \caption{\label{fig:densityCurrentRelation}Relation between ion and electron density for different currents, distributed from the center of the spacecraft.}
 \end{figure}
 
-The FIG \ref{fig:densityCurrent} shows the density distribution for the ions, electrons and photo-electrons when the value of the current is equal to $10^{-4}$ A/m$^3$. One can notice the region behind the satellite, that demonstrates the wake formation, where the ion density is lower than the electron density.\par
+The FIG. \ref{fig:densityCurrent} shows the density distribution for the ions, electrons and photo-electrons when the value of the current is equal to $10^{-4}$ A/m$^3$. One can notice the region behind the satellite, that demonstrates the wake formation, where the ion density is lower than the electron density.\par
 
-During the workshop we have also considered different cases for different current values. FIG \ref{fig:densityCurrentRelation} shows the relations between ion density and total sum of electron densities for current values $j_{ph}=0$ A/m$^3$, $j_{ph}=10^{-5}$ A/m$^3$ and $j_{ph}=10^{-4}$ A/m$^3$. The main interest is the area behind the satellite, and that is why one can observe the plot from the center of the spacecraft to the end of the wake formation. There are no noticeable changes in the wakes, and we can conclude that the wake length has the constant value. From the profile picture we have estimated this variable and got the result equal to 11 cm.
+During the workshop we have also considered different cases for different current values. FIG. \ref{fig:densityCurrentRelation} shows the relations between ion density and total sum of electron densities for current values $j_{ph}=0$ A/m$^3$, $j_{ph}=10^{-5}$ A/m$^3$ and $j_{ph}=10^{-4}$ A/m$^3$. The main interest is the area behind the satellite, and that is why one can observe the plot from the center of the spacecraft to the end of the wake formation. There are no noticeable changes in the wakes, and we can conclude that the wake length has the constant value. From the profile picture we have estimated this variable and got the result equal to 11 cm.
 
 \begin{figure*}
 \includegraphics[width=1\textwidth]{pbody.png}
 \caption{The change in the spacecraft potential over time. Data from one simulation with no photo emission, and two simulations with photo-emission from the wake side on the body. $j_{ph}$ is the photo-emission density in A/m$^3$. \label{fig:potential_time}}
 \end{figure*}
 
-We may also analyze the temporal change of spacecraft potential to see if changes in .  From Eq. \ref{plasmafreq} the plasma frequency $\omega_{pe}$ is calculated to $17.84 \times 10^6$ rad/s. The frequency of the temporal change of spacecraft potential should be affected by this plasma frequency and therefore correlate with the plasma frequency. The potential frequency $\omega_{pbody}$ is $19.25 \times 10^6$ rad/s, looking at the average oscillation time. The periods corresponding to these two frequencies is $\mathrm{T}_{pe} = 3.5224 \times 10^{-7}$ s and $\mathrm{T}_{pbody} = 3.2639 \times 10^{-7}$ s The charging time for the spacecraft is the same for all three runs, approximately $4.5\mathrm{T}_{pe}$.
+We may also analyze the temporal change of spacecraft potential, FIG \ref{fig:potential_time}, to see if photo emission changes has any effect the plasma frequencys interaction with the spacecraft.  From Eq. \ref{plasmafreq} the plasma frequency $\omega_{pe}$ is calculated to $17.84 \times 10^6$ rad/s. The frequency of the temporal change of spacecraft potential should be affected by this plasma frequency and therefore correlate with the plasma frequency. The potential frequency $\omega_{pbody}$ is $19.25 \times 10^6$ rad/s, looking at the average oscillation time. The periods corresponding to these two frequencies is $\mathrm{T}_{pe} = 3.5224 \times 10^{-7}$ s and $\mathrm{T}_{pbody} = 3.2639 \times 10^{-7}$ s The charging time for the spacecraft is the same for all three runs, approximately $4.5\mathrm{T}_{pe}$.
 
 \subsection{Change of plasma density}
 
@@ -252,8 +251,8 @@ Finally, we tried to look at the charging of the spacecraft in time, shown in FI
 
 In our simulation we have assumed some models could be valid. Let us look at the OML-model first. In our simulation we have:
 \begin{align*}
-v_D &= 41600 \, \, \text{m\/s}\\
-c_s &= \sqrt{k T_e / \mu_i} = 9536.1417 \, \, \text{m\/s}
+v_D &= 41600 \, \, \text{m/s}\\
+c_s &= \sqrt{k T_e / \mu_i} = 9536.1417 \, \, \text{m/s}
 \end{align*}
 
 The Bohm criterion is therefore fulfilled for the parameters in our simulation. Calculating different free floating potentials for OML defined in Eq. \ref{eq:Boef} and Eq. \ref{eq:Pesceli} gives
@@ -263,8 +262,8 @@ The Bohm criterion is therefore fulfilled for the parameters in our simulation. 
 \end{align*}
 This value we also got from our simulation when we did not have any photo-emission and static flow. This was found to be $\Psi_{sim} = -0.634$ V. Comparing to the free floating potential with or without presheath;
 \begin{align*}
-\Delta \Psi_{fl,I} &= \frac{0.695-0.634}{0.695} = 0.0878\\
-\Delta \Psi_{fl,II} &= \frac{0.893-0.634}{0.893} = 0.290
+\Delta \Psi_{fl,I} &= \frac{0.695 \, \text{V} -0.634 \, \text{V}}{0.695 \, \text{V}} = 0.0878\\
+\Delta \Psi_{fl,II} &= \frac{0.893 \, \text{V} -0.634 \, \text{V}}{0.893 \, \text{V}} = 0.290
 \end{align*}
 So for our case we then have an relative error of 29\% when we do not have presheath in this model.\\
 
@@ -280,9 +279,9 @@ r_e &= 8.26 \, \, \text{cm}\\
 \end{align*}
 In other words, a relative error of 81\%.\\
 
-We also found the Mach angle. Measuring using the density gradient as boundary, this angle was found to be 18.43 degrees. If we had the angle from the start of the rocket to the end of the visible wake, the angle was then 13.25 degrees. The true Mach angle for our simulation should be between these two values.\\
+We also found the Mach angle. Measuring using the density gradient as boundary, this angle was found to be 18.43 degrees. If we had the angle from the front of the rocket to the end of the visible wake, the angle was then 13.25 degrees. The true Mach angle for our simulation should be between these two values.\\
 
-We calculate the Mach number and then the theoretical Mach angle, using Eq. \ref{eq:Mach} and Eq. \ref{eq:MachAngle}. We also expand the ion sound velocity to the adiabatic expression in Eq. \ref{eq:IonSpeed2}.
+We calculated the Mach number and then the theoretical Mach angle, using Eq. \ref{eq:Mach} and Eq. \ref{eq:MachAngle}. We also expanded the ion sound velocity to the adiabatic expression defined in Eq. \ref{eq:IonSpeed2}.
 \begin{align*}
 c_{s,I} &= 9536.1417 \, \, \text{m/s}\\
 c_{s,II} &= \sqrt{\frac{kT_e + \frac{5}{3} k T_i}{ M_i}} = 12911.997 \, \, \text{m/s}\\
@@ -297,7 +296,7 @@ The adiabatic version of the Mach angle should be the closest to what we want. W
 \Delta \alpha &= \frac{15.86 ^{\circ}- 18.08^{\circ}}{18.08^{\circ}} = 0.123.
 \end{align*}
 
-We found the plasma frequency by looking at the frequency of the spacecraft potential in time, which was $\omega_{sim} = 19.28\times 10^{6}$ rad/s. Using Eq. \ref{eq:plasmafreq}, the theoretical value is $17.84\times 10^{6}$ rad/s. This correspond to a relative error of 8.1\%.
+We found the plasma frequency by looking at the frequency of the spacecraft potential in time, which was from the simulation$\omega_{pbody} = 19.28\times10^{6}$ rad/s and theoretically $17.84\times 10^{6}$ rad/s, as calculated above. This corresponded to a relative error of 8.1\%.
 
 \section{Discussion}
 
@@ -309,16 +308,16 @@ Photo-emission has the possibility of having effect on the potential of spacecra
 
 Especially the gyro-radius is a measurement we could have done wrong. Finding the correct line for the correct bending path was probably not done in the correct way, and we did not have time to check again. The fitted linear model for the potential then probably will be correct to the first order, assuming we have the same relative error for the frequency as the potential, $8\%$.\\
 
-The OML model and floating potential are of our interest as well. Including the presheath in the formula (8) gave a result closer to the numerical result, and this should not be occurring since the presheath is a phenomenon in subsonic plasma, but we have supersonic plasma, given our Mach number. We expected the simulation with flow to give a less negative potential because the electrons would have higher velocity and therefore less electrons would be pulled into the spacecraft. In our simulations the debye length is just slightly bigger than the spacecraft and therefore the OML model is not appropriate for our simulations. We should however still see a similar result, since we are on the boundary of this domain for the other simulation with the hybrid model\cite{P7}.\\
+The OML-model and floating potential are of our interest as well. Including the presheath in the formula (\ref{eq:Boef}) gave a result closer to the numerical result, and this should not be occurring since the presheath is a phenomenon in subsonic plasma, but we have supersonic plasma, given our Mach number. We expected the simulation with flow to give a less negative potential because the electrons would have higher velocity and therefore less electrons would be pulled into the spacecraft. In our simulations the debye length is just slightly bigger than the spacecraft and therefore the OML model is not appropriate for our simulations. We should however still see a similar result, since we are on the boundary of this domain for the other simulation with the hybrid model\cite{P7}.\\
 
-The change in photo emission doesn't seem to affect the temporal characteristics of the spacecraft potential. The mean values change (less between no photo-emission and "low" photo-emission), but the period of the oscillations and amplitude variations do not differ. We have good correspondence between plasma frequency and potential frequency.\\
+The change in photo-emission doesn't seem to affect the temporal characteristics of the spacecraft potential. The mean values change (less between no photo-emission and "low" photo-emission), but the period of the oscillations and amplitude variations do not differ. We have good correspondence between plasma frequency and potential frequency.\\
 
 Because of the density change, the charging time of the space craft seems to be longer than the simulation time. We have in other words no stable potential when we decreased the potential. The figures in other words could be explained because of this, and new simulation with fixed parameters could give us a consistent result. We however can see an indication that the potential will decrease when we lower the density, and the change is bigger than could be explained because of unfinished simulation. Wake profile probably is just reduced in size and still have the same form. The mach angle also seems to be the same. 
 
 \section{Conclusion}
 Under normal conditions the particles are in a quasineutral state and when we apply the external electromagnetic field and change the velocity distributions, we get changes in the sheath formation and wake formation. Some ions are trapped in the wake, even though the wake region should be an ion void region. Photo-emission has no effect on the wake. \\
 
-Photo-emission rather has an effect on the potential of the spacecraft. The OML model gives us a analytic value for the floating potential, but the model does not fit our model, and therefore the analytic value is not accurate. But having no flow in the simulations gave a better result compared to the OML model, and this was to be expected. \\
+Photo-emission rather has an effect on the potential of the spacecraft. The OML-model gives us a analytic value for the floating potential, but the model does not fit our model, and therefore the analytic value is not accurate. But having no flow in the simulations gave a better result compared to the OML-model, and this was to be expected. \\
 
 The change in photo-emission affect the temporal characteristics of the spacecraft potential. This is seen in the mean value changing, but the period of the oscillations and the amplitude variations do not change, and therefore we get a good correspondence between plasma frequency and potential frequency. \\
 
@@ -360,8 +359,7 @@ preprint]{revtex4-1}
 \date{\today}
 
 \begin{abstract}
-\textbf{Abstract.}\\
-The QubeSat will be put in low earth orbit (LEO) by 2017. We examined the photo emission effect on the satellite using 3 dimensional PIC simulations. Mainly potential changes and changes in the wake have been examined. We have also partially studied the effect of plasma density. There is no noticeable changes to the wake for the different photo emission current densities, some changes do occur when altering the plasma density. The new density simulation may not be accurate because the simulation time was too short and we probably did not reach the floating potential of the spacecraft. We get a rise in the potential for increased photo emission current density, and estimation of error show it to be significant. New simulations with new current and densities could check if our linear fit actually will fit or not.
+The QubeSat will be put in low earth orbit (LEO) by 2017, and we wanted in this paper to look at how photemission could effect the sattelite. We simulated the satellite using 3 dimensional particle-in-cell (PIC), and looked mainly on the changes of the potential and the wake profile in both longitudunal and transversal plane of the plasma flow. We have also partially studied the effect on plasma density. There was not noticeable effect on the shape of the wake for the different photo emission current densities, while this was observed altering the plasma density. This could however be because of the short simulation time, and we probably did not converge enough to the the equilibrium potential. We saw a rise in the potenial due to photoemission, and studies of theorical effect seems to indicate this effect to be significant. 
 \end{abstract}
 
 \maketitle
@@ -496,7 +494,7 @@ We looked first at how the photo emission effected our simulation, then changed 
 \includegraphics[scale=0.5]{rho4_sidepicture.png}
 \caption{The profile from the side of the spacecraft, and it was symmetric in both planes.}
 \end{subfigure}
-\caption{The situation when we have photo-emission, in this case j$_{ph} = 1E-5$ A/m$^3$. The wake in this figure is similar to the one in FIG. \ref{fig:profile_nocurrent}. \label{fig:profile_current}}
+\caption{The situation when we have photo-emission, in this case j$_{ph} = 10^{-5}$ A/m$^3$. The wake in this figure is similar to the one in FIG. \ref{fig:profile_nocurrent}. \label{fig:profile_current}}
 \end{figure*}
 
 \begin{figure*}
@@ -505,9 +503,9 @@ We looked first at how the photo emission effected our simulation, then changed 
 \label{fig:potential_alongx}}
 \end{figure*}
 
-FIG \ref{fig:profile_nocurrent} shows the wake profile behind spacecraft, not extending in the perpendicular direction along the field lines. If we add photo-emission,  shown in FIG, \ref{fig:profile_current}, we see that the wake formation is nearly the same. We have here the higher current, while also the low current will have similar wake profile.\\
+FIG. \ref{fig:profile_nocurrent} shows the wake profile behind spacecraft, not extending in the perpendicular direction along the field lines. If we add photo-emission,  shown in FIG. \ref{fig:profile_current}, we see that the wake formation is nearly the same. We have here the higher current, while also the low current will have similar wake profile.\\
 
-FIG \ref{fig:potential_alongx} shows the potential near spacecraft for the simulation with different photo emission current, and without flow. First, it can be seen that the spacecraft potential for the simulations with flow is higher than without flow. Second, the spacecraft potential with more photo emission is higher. This difference between the potential for the spacecraft  with photo-emission, j$_{ph} = 10^{-4}$ A/m$^3$ and  j$_{ph} = 10^{-5}$ A/m$^3$ is larger than that between without photo emission and  j$_{ph} = 10^{-5}$ A/m$^3$. We can see an effect of the photo electrons on the potential.\\
+FIG. \ref{fig:potential_alongx} shows the potential near spacecraft for the simulation with different photo emission current, and without flow. First, it can be seen that the spacecraft potential for the simulations with flow is higher than without flow. Second, the spacecraft potential with more photo emission is higher. This difference between the potential for the spacecraft  with photo-emission, j$_{ph} = 10^{-4}$ A/m$^3$ and  j$_{ph} = 10^{-5}$ A/m$^3$ is larger than that between without photo emission and  j$_{ph} = 10^{-5}$ A/m$^3$. We can see an effect of the photo electrons on the potential.\\
 
 Assuming a linear effect, the potential should then be dependent on the photo-emission as:
 \begin{align*}
@@ -529,16 +527,16 @@ Which had a normalized residual of 4.1541e-16. A linear term was not enough.\\
 \caption{\label{fig:densityCurrentRelation}Relation between ion and electron density for different currents, distributed from the center of the spacecraft.}
 \end{figure}
 
-The FIG \ref{fig:densityCurrent} shows the density distribution for the ions, electrons and photo-electrons when the value of the current is equal to $10^{-4}$ A/m$^3$. One can notice the region behind the satellite, that demonstrates the wake formation, where the ion density is lower than the electron density.\par
+The FIG. \ref{fig:densityCurrent} shows the density distribution for the ions, electrons and photo-electrons when the value of the current is equal to $10^{-4}$ A/m$^3$. One can notice the region behind the satellite, that demonstrates the wake formation, where the ion density is lower than the electron density.\par
 
-During the workshop we have also considered different cases for different current values. FIG \ref{fig:densityCurrentRelation} shows the relations between ion density and total sum of electron densities for current values $j_{ph}=0$ A/m$^3$, $j_{ph}=10^{-5}$ A/m$^3$ and $j_{ph}=10^{-4}$ A/m$^3$. The main interest is the area behind the satellite, and that is why one can observe the plot from the center of the spacecraft to the end of the wake formation. There are no noticeable changes in the wakes, and we can conclude that the wake length has the constant value. From the profile picture we have estimated this variable and got the result equal to 11 cm.
+During the workshop we have also considered different cases for different current values. FIG. \ref{fig:densityCurrentRelation} shows the relations between ion density and total sum of electron densities for current values $j_{ph}=0$ A/m$^3$, $j_{ph}=10^{-5}$ A/m$^3$ and $j_{ph}=10^{-4}$ A/m$^3$. The main interest is the area behind the satellite, and that is why one can observe the plot from the center of the spacecraft to the end of the wake formation. There are no noticeable changes in the wakes, and we can conclude that the wake length has the constant value. From the profile picture we have estimated this variable and got the result equal to 11 cm.
 
 \begin{figure*}
 \includegraphics[width=1\textwidth]{pbody.png}
 \caption{The change in the spacecraft potential over time. Data from one simulation with no photo emission, and two simulations with photo-emission from the wake side on the body. $j_{ph}$ is the photo-emission density in A/m$^3$. \label{fig:potential_time}}
 \end{figure*}
 
-We may also analyze the temporal change of spacecraft potential to see if changes in .  From Eq. \ref{plasmafreq} the plasma frequency $\omega_{pe}$ is calculated to $17.84 \times 10^6$ rad/s. The frequency of the temporal change of spacecraft potential should be affected by this plasma frequency and therefore correlate with the plasma frequency. The potential frequency $\omega_{pbody}$ is $19.25 \times 10^6$ rad/s, looking at the average oscillation time. The periods corresponding to these two frequencies is $\mathrm{T}_{pe} = 3.5224 \times 10^{-7}$ s and $\mathrm{T}_{pbody} = 3.2639 \times 10^{-7}$ s The charging time for the spacecraft is the same for all three runs, approximately $4.5\mathrm{T}_{pe}$.
+We may also analyze the temporal change of spacecraft potential, FIG \ref{fig:potential_time}, to see if photo emission changes has any effect the plasma frequencys interaction with the spacecraft.  From Eq. \ref{plasmafreq} the plasma frequency $\omega_{pe}$ is calculated to $17.84 \times 10^6$ rad/s. The frequency of the temporal change of spacecraft potential should be affected by this plasma frequency and therefore correlate with the plasma frequency. The potential frequency $\omega_{pbody}$ is $19.25 \times 10^6$ rad/s, looking at the average oscillation time. The periods corresponding to these two frequencies is $\mathrm{T}_{pe} = 3.5224 \times 10^{-7}$ s and $\mathrm{T}_{pbody} = 3.2639 \times 10^{-7}$ s The charging time for the spacecraft is the same for all three runs, approximately $4.5\mathrm{T}_{pe}$.
 
 \subsection{Change of plasma density}
 
@@ -583,8 +581,8 @@ Finally, we tried to look at the charging of the spacecraft in time, shown in FI
 
 In our simulation we have assumed some models could be valid. Let us look at the OML-model first. In our simulation we have:
 \begin{align*}
-v_D &= 41600 \, \, \text{m\/s}\\
-c_s &= \sqrt{k T_e / \mu_i} = 9536.1417 \, \, \text{m\/s}
+v_D &= 41600 \, \, \text{m/s}\\
+c_s &= \sqrt{k T_e / \mu_i} = 9536.1417 \, \, \text{m/s}
 \end{align*}
 
 The Bohm criterion is therefore fulfilled for the parameters in our simulation. Calculating different free floating potentials for OML defined in Eq. \ref{eq:Boef} and Eq. \ref{eq:Pesceli} gives
@@ -594,8 +592,8 @@ The Bohm criterion is therefore fulfilled for the parameters in our simulation. 
 \end{align*}
 This value we also got from our simulation when we did not have any photo-emission and static flow. This was found to be $\Psi_{sim} = -0.634$ V. Comparing to the free floating potential with or without presheath;
 \begin{align*}
-\Delta \Psi_{fl,I} &= \frac{0.695-0.634}{0.695} = 0.0878\\
-\Delta \Psi_{fl,II} &= \frac{0.893-0.634}{0.893} = 0.290
+\Delta \Psi_{fl,I} &= \frac{0.695 \, \text{V} -0.634 \, \text{V}}{0.695 \, \text{V}} = 0.0878\\
+\Delta \Psi_{fl,II} &= \frac{0.893 \, \text{V} -0.634 \, \text{V}}{0.893 \, \text{V}} = 0.290
 \end{align*}
 So for our case we then have an relative error of 29\% when we do not have presheath in this model.\\
 
@@ -611,9 +609,9 @@ r_e &= 8.26 \, \, \text{cm}\\
 \end{align*}
 In other words, a relative error of 81\%.\\
 
-We also found the Mach angle. Measuring using the density gradient as boundary, this angle was found to be 18.43 degrees. If we had the angle from the start of the rocket to the end of the visible wake, the angle was then 13.25 degrees. The true Mach angle for our simulation should be between these two values.\\
+We also found the Mach angle. Measuring using the density gradient as boundary, this angle was found to be 18.43 degrees. If we had the angle from the front of the rocket to the end of the visible wake, the angle was then 13.25 degrees. The true Mach angle for our simulation should be between these two values.\\
 
-We calculate the Mach number and then the theoretical Mach angle, using Eq. \ref{eq:Mach} and Eq. \ref{eq:MachAngle}. We also expand the ion sound velocity to the adiabatic expression in Eq. \ref{eq:IonSpeed2}.
+We calculated the Mach number and then the theoretical Mach angle, using Eq. \ref{eq:Mach} and Eq. \ref{eq:MachAngle}. We also expanded the ion sound velocity to the adiabatic expression defined in Eq. \ref{eq:IonSpeed2}.
 \begin{align*}
 c_{s,I} &= 9536.1417 \, \, \text{m/s}\\
 c_{s,II} &= \sqrt{\frac{kT_e + \frac{5}{3} k T_i}{ M_i}} = 12911.997 \, \, \text{m/s}\\
@@ -628,7 +626,7 @@ The adiabatic version of the Mach angle should be the closest to what we want. W
 \Delta \alpha &= \frac{15.86 ^{\circ}- 18.08^{\circ}}{18.08^{\circ}} = 0.123.
 \end{align*}
 
-We found the plasma frequency by looking at the frequency of the spacecraft potential in time, which was $\omega_{sim} = 19.28\times 10^{6}$ rad/s. Using Eq. \ref{eq:plasmafreq}, the theoretical value is $17.84\times 10^{6}$ rad/s. This correspond to a relative error of 8.1\%.
+We found the plasma frequency by looking at the frequency of the spacecraft potential in time, which was from the simulation$\omega_{pbody} = 19.28\times10^{6}$ rad/s and theoretically $17.84\times 10^{6}$ rad/s, as calculated above. This corresponded to a relative error of 8.1\%.
 
 \section{Discussion}
 
@@ -640,16 +638,346 @@ Photo-emission has the possibility of having effect on the potential of spacecra
 
 Especially the gyro-radius is a measurement we could have done wrong. Finding the correct line for the correct bending path was probably not done in the correct way, and we did not have time to check again. The fitted linear model for the potential then probably will be correct to the first order, assuming we have the same relative error for the frequency as the potential, $8\%$.\\
 
-The OML model and floating potential are of our interest as well. Including the presheath in the formula (8) gave a result closer to the numerical result, and this should not be occurring since the presheath is a phenomenon in subsonic plasma, but we have supersonic plasma, given our Mach number. We expected the simulation with flow to give a less negative potential because the electrons would have higher velocity and therefore less electrons would be pulled into the spacecraft. In our simulations the debye length is just slightly bigger than the spacecraft and therefore the OML model is not appropriate for our simulations. We should however still see a similar result, since we are on the boundary of this domain for the other simulation with the hybrid model\cite{P7}.\\
+The OML-model and floating potential are of our interest as well. Including the presheath in the formula (\ref{eq:Boef}) gave a result closer to the numerical result, and this should not be occurring since the presheath is a phenomenon in subsonic plasma, but we have supersonic plasma, given our Mach number. We expected the simulation with flow to give a less negative potential because the electrons would have higher velocity and therefore less electrons would be pulled into the spacecraft. In our simulations the debye length is just slightly bigger than the spacecraft and therefore the OML model is not appropriate for our simulations. We should however still see a similar result, since we are on the boundary of this domain for the other simulation with the hybrid model\cite{P7}.\\
 
-The change in photo emission doesn't seem to affect the temporal characteristics of the spacecraft potential. The mean values change (less between no photo-emission and "low" photo-emission), but the period of the oscillations and amplitude variations do not differ. We have good correspondence between plasma frequency and potential frequency.\\
+The change in photo-emission doesn't seem to affect the temporal characteristics of the spacecraft potential. The mean values change (less between no photo-emission and "low" photo-emission), but the period of the oscillations and amplitude variations do not differ. We have good correspondence between plasma frequency and potential frequency.\\
 
 Because of the density change, the charging time of the space craft seems to be longer than the simulation time. We have in other words no stable potential when we decreased the potential. The figures in other words could be explained because of this, and new simulation with fixed parameters could give us a consistent result. We however can see an indication that the potential will decrease when we lower the density, and the change is bigger than could be explained because of unfinished simulation. Wake profile probably is just reduced in size and still have the same form. The mach angle also seems to be the same. 
 
 \section{Conclusion}
 Under normal conditions the particles are in a quasineutral state and when we apply the external electromagnetic field and change the velocity distributions, we get changes in the sheath formation and wake formation. Some ions are trapped in the wake, even though the wake region should be an ion void region. Photo-emission has no effect on the wake. \\
 
-Photo-emission rather has an effect on the potential of the spacecraft. The OML model gives us a analytic value for the floating potential, but the model does not fit our model, and therefore the analytic value is not accurate. But having no flow in the simulations gave a better result compared to the OML model, and this was to be expected. \\
+Photo-emission rather has an effect on the potential of the spacecraft. The OML-model gives us a analytic value for the floating potential, but the model does not fit our model, and therefore the analytic value is not accurate. But having no flow in the simulations gave a better result compared to the OML-model, and this was to be expected. \\
+
+The change in photo-emission affect the temporal characteristics of the spacecraft potential. This is seen in the mean value changing, but the period of the oscillations and the amplitude variations do not change, and therefore we get a good correspondence between plasma frequency and potential frequency. \\
+
+When the density of the particles was changed, the charging time of the spacecraft was longer than the simulation time, so while there seems to be a reduction in the wake profile, and the spacecraft potential, we can not make any conclusions without running another simulation with a longer simulation time.
+
+\begin{acknowledgments}
+We would like to show respect to our outstanding teachers, Wojciech Miloch, Mikael Mortensen, Hideyuki Usui, Yohei Miyake, who deserve our greatest gratitude. We want to thank all of them for helping us during the 4D Space workshop and giving us a good guideline throughout the numerous consultations, lectures and discussions. We would also like to extend our gratitude to Japanese sake, which without this report would not exist.
+\end{acknowledgments}
+
+\bibliography{GodzillaReportMain}
+\end{document}\documentclass[aip, 
+rsi, 
+amsmath,
+amssymb,
+longbibliography,
+preprint]{revtex4-1}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{subcaption}
+\usepackage[]{units}
+%\usepackage{doi}
+
+\begin{document}
+
+\title[4th 4DSpace Workshop -- Team Godzilla -- Final Report]{Plasma disturbance around a space craft due to photo emission}
+
+\author{S. Farhad} 
+\author{A. Piterskaya}
+\author{R. Sivertsen}
+\author{G. Svenn}
+\affiliation{University of Oslo}
+
+\author{T. Kiriyama}
+\author{Y. Xue}
+\affiliation{Kobe University}
+
+\date{\today}
+
+\begin{abstract}
+The QubeSat will be put in low earth orbit (LEO) by 2017, and we wanted in this paper to look at how photemission could effect the sattelite. We simulated the satellite using 3 dimensional particle-in-cell (PIC), and looked mainly on the changes of the potential and the wake profile in both longitudunal and transversal plane of the plasma flow. We have also partially studied the effect on plasma density. There was not noticeable effect on the shape of the wake for the different photo emission current densities, while this was observed altering the plasma density. This could however be because of the short simulation time, and we probably did not converge enough to the the equilibrium potential. We saw a rise in the potenial due to photoemission, and studies of theorical effect seems to indicate this effect to be significant. 
+\end{abstract}
+
+\maketitle
+
+\section{\label{sec:intro} Introduction}
+
+\begin{figure*}[!ht]
+\includegraphics[scale=0.6]{GridConceptDrawing.png}
+\caption{Model used for our simulations, based on CubeSat.\label{fig:model}}
+\end{figure*}
+
+The thousands of spacecrafts put in orbit around Earth have been an integral part in the evolution of technology. Still space exploration is a very expensive and challenging activity, and the desire to reduce cost has always been and will always be important. In order to accomplish this, huge amounts of data and a qualitative understanding of space dynamics is needed. \\
+
+Difficulties in acquiring reliable and consistent, quality data have in the past been because of lack of computational power and understanding of the conditions in space. With efficient numerical models, it is now possible to run simulations before the spacecraft is sent into space. Thus minimizing the risk and cost of space exploration. \\
+
+Many papers have been written about particle-in-cell (PIC) models, spacecrafts in plasma, the effect of solar winds and spacecraft wake formation. The aim of this report is to look at how photo-emissions from the sun interacts with the spacecraft in the low Earth orbit (LEO) and the spacecraft wake, and how the spacecraft potential changes. We shall also check the validity of orbital-motion-limited(OML)-model, and see if our result is consistent with theoretical values. We are using Paraview to visualize the data. All of this is done with a electrostatic PIC model similar to a recent analysis that was done with a hybrid model \cite{P7}.
+
+\section{\label{sec:theory} Theory}
+
+In this report we are using some general plasma parameters, so here follows a recap of their definition.\\
+
+We have firstly two definition of the ion sound speed, one with or without adiabatic terms. They are defined respectively as 
+\begin{align}
+c_s &= \sqrt{\frac{k T_i}{m_i}}\label{eq:IonSpeed}
+\end{align}
+and
+\begin{align}
+c_{s,II} &= \sqrt{\left[ \frac{kT_e + \gamma k T_i}{m_i}\right]}\label{eq:IonSpeed2}
+\end{align}
+where $\gamma$ is the adiabatic index, in this case 5/3. $T_i$ is the ion temperature, while $k$ is the Boltzmann constant.
+
+The Mach number similarly is defined as
+\begin{align}
+\mathcal{M} &= \frac{v_D}{c_s}\label{eq:Mach}
+\end{align}
+where $v_D$ is the plasma drift velocity and $c_s$ the electron sound speed. It has a corresponding Mach angle
+\begin{align}
+\alpha = sin^{-1}(\frac{1}{\mathcal{M}})\label{eq:MachAngle}.
+\end{align}
+
+Lastly we can define the electron plasma frequency and gyro-radius used in our report. The plasma frequency is
+\begin{align}
+\omega_{pe} = \sqrt{\frac{n_e e^2}{m \epsilon_0}}\label{plasmafreq}
+\end{align}
+where $\epsilon_0$ is the vacuum permittivity. And we define the gyro-radius as 
+\begin{align}
+r_e &= \frac{m_e v_\perp}{|q| B}\label{eq:gyroradius}
+\end{align}
+$v_\perp$ the velocity perpendicular to the magnetic field and is $B$ the magnetic flux density. In our simulation we let the magnetic field propagate in positive z-direction, while the plasma flows in the positive x-direction, as defined in FIG \ref{fig:model}.
+
+\subsection{Floating potential}
+
+Orbital-motion-limited theory (OML) predicts a surface potential for small spacecrafts and/or large debye lengths. We will assume the OML model and check the Bohm criterion. We then can calculate the floating potential of the satellite analytically. The Bohm criterion is an inequality signifying that the ion flow speed at the plasma boundary must be at least as great as the ion sound speed in order for a sheath to form at the boundary.  Using the ion sound speed defined in Eq. \ref{eq:IonSpeed}, we then get the two following equations for the free floating potential. \\
+
+Floating potential with a presheath \cite{Boef}:
+\begin{equation}\label{eq:Boef}
+\Psi_{fl} = -\frac{k T_e}{2e}[\text{ln}(\frac{m_i}{2\pi m_e})+1]+\Phi_0
+\end{equation}
+Floating potential without a presheath \cite{Pesceli}:
+\begin{equation}\label{eq:Pesceli}
+\Psi_{fl}=-\frac{k T_e}{2e}\text{ln}(\frac{T_em_i}{T_i m_e})+\Phi_0
+\end{equation}
+where $e$ is the elementary charge and $\Phi_0$ is the plasma potential. \\
+
+\section{\label{sec:numsetup} Numerical Setup}
+
+During the workshop, we have been using the EMSES: Electro-Magnetic Spacecraft Environment Simulator, which uses particle-in-cell (PIC) to calculate the motion of particles.\\
+
+Among the PIC features are the treatment of a spacecraft as internal boundaries and using well-verified and stable numerical schemes. In addition, it is highly parallellized with MPI. Plasma is represented as a cluster\cite{numsetup} of negatively charged electrons and positively charged ions that are moving under the influence of electromagnetic fields.\\
+
+The motion of charged particles is described with classical relativistic equations of motion. The electromagnetic field’s change is described in terms of Poisson equation, $\nabla\cdot(-\nabla \phi)=\frac{\rho}{\epsilon_0}$, which gives an electrostatic field\cite{numsetup2}.\\
+
+In our case we use Dirichlet boundary conditions on the grid, fixed to 0, and the model supplies a continuous stream of particles to the system, while particles that hit the grid boundary disappear.
+
+\subsection{Numerical parameters}
+
+\begin{table}
+  \centering
+  \caption{Simulation parameters used for our simulation: Low Earth Orbit case. The magnetic field value, electron density and Temperature is given for our given altitude. Assuming the physical sun, we also get the temperature of the electrons from photo emission.\label{tab:table1}}
+\begin{tabular}{|l|l|}
+\hline
+\hline
+  Parameters & Value  \\
+  \hline
+   Spatial grid width \(\Delta_x\) & \(1.0\) cm \\
+   Electron density \(n_e\) & \(5 \cdot 10^5\)/cm$^3$   \\
+   Electron temperature \(T_e\) & \(3000\) K   \\
+   Ion temperature \(T_i\) & \(1500\) K \\
+   Photo-electron temperature \(T_{pe}\) & \(34813.51\) K  \\
+   Plasma flow speed \(v_D\)  & \(41600\) m/s  \\
+   Magnetic field strength \(|B|\) & \(50 \)  \(\mu T\) \\
+   Arrival direction of sunlight \(\Theta_{xy}\) & \(0\)\\
+   Altitude \(r'\) & \(400\) km \\
+   Reduced ion mass $\mu_i$ & 500$m_e$ \\
+   \hline
+\hline
+\end{tabular}
+\end{table}
+
+We want to simulate the situation for the satellite shown in FIG. \ref{fig:model}. Assuming we are in a Low Earth Orbit-regime, we get the different numerical parameters used in Table \ref{tab:table1}. We have  assumed a Maxwell-Boltzmann distribution of the particles, and that the magnetic field is perpendicular to the flow, in positive z-direction.\\
+
+ We will in other words have a grid size of 128 in each direction, where we have a plasma flow in negative x-direction, as shown in the figure. The grid size is chosen such that we get stable potential of the spacecraft, while also saving processing power. It is also smaller than the Debye length, so the time scale is correct. The spacecraft is placed in the middle, and we let the sunlight hit the satellite in the opposite direction of the constant plasma flow, which will give the photo emission directly to the wake.\\
+ 
+ We will do three simulations where we change current of the electrons from the photo emission, $j_{ph} = 0, 10^{-5}$ A/m$^3$ and $10^{-4}$ A/m$^3$. We shall also run a simulation without any flow, and one simulation with decreased electron density, using a estimate derived from Brekke.\cite{Brekke} to be $n_e = 10^{-4}$ particles/cm$^3$.\\
+ 
+Using the definition above, we will then have a supersonic plasma; and we will have the debye length and the probe length of the same order. The gyroradius will however be one order larger then the probe radius (5 cm). According to the similar study with the hybrid model\cite{P7}, we are then in either the complex domain with result similar to a model with infinite gyroradius (OML) or in the regime with dust collecting, with $R_p \approx \lambda_d \approx r_e$. We can then compare our result to the OML-model discussed above, and in the case where this is not valid; rather compare to the empiracal result from their study.
+
+\section{Result}
+
+We looked first at how the photo emission effected our simulation, then changed the plasma density for the case where we had $j_{ph} = 10^{-5}$ A/m$^3$. In the end we calculated the relative difference from our results.
+
+\subsection{Change of Photo-emission current}
+
+\begin{figure*}
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[scale=0.5]{rho0_frontpicture.png}
+\caption{The profile from the front of the spacecraft, the same direction as the direction of the flow.}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[scale=0.5]{rho0_sidepicture.png}
+\caption{The profile from the side of the spacecraft, and it was symmetric in both planes.}
+\end{subfigure}
+\caption{The situation when we do not have any photo-emission. The plasma flow is from the left in this picture\label{fig:profile_nocurrent}}
+\end{figure*}
+
+\begin{figure*}
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[scale=0.5]{rho4_frontpicture.png}
+\caption{The profile from the front of the spacecraft, when we had photo emission, the same direction as the flow.}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[scale=0.5]{rho4_sidepicture.png}
+\caption{The profile from the side of the spacecraft, and it was symmetric in both planes.}
+\end{subfigure}
+\caption{The situation when we have photo-emission, in this case j$_{ph} = 10^{-5}$ A/m$^3$. The wake in this figure is similar to the one in FIG. \ref{fig:profile_nocurrent}. \label{fig:profile_current}}
+\end{figure*}
+
+\begin{figure*}
+\includegraphics[scale=0.45]{x-potential_spacecraft_.png}
+\caption{The potential along the flow direction for different photo emissions, emitting direcly to the wake. Top line is the simulation with the photo emission current set to $j_{ph} = 10^{-4}$ A/m$^3$, then  $j_{ph} = 10^{-5}$ A/m$^3$ and without photo emission. We also added the potential for the situation with no plasma flow, seen in the bottom.
+\label{fig:potential_alongx}}
+\end{figure*}
+
+FIG. \ref{fig:profile_nocurrent} shows the wake profile behind spacecraft, not extending in the perpendicular direction along the field lines. If we add photo-emission,  shown in FIG. \ref{fig:profile_current}, we see that the wake formation is nearly the same. We have here the higher current, while also the low current will have similar wake profile.\\
+
+FIG. \ref{fig:potential_alongx} shows the potential near spacecraft for the simulation with different photo emission current, and without flow. First, it can be seen that the spacecraft potential for the simulations with flow is higher than without flow. Second, the spacecraft potential with more photo emission is higher. This difference between the potential for the spacecraft  with photo-emission, j$_{ph} = 10^{-4}$ A/m$^3$ and  j$_{ph} = 10^{-5}$ A/m$^3$ is larger than that between without photo emission and  j$_{ph} = 10^{-5}$ A/m$^3$. We can see an effect of the photo electrons on the potential.\\
+
+Assuming a linear effect, the potential should then be dependent on the photo-emission as:
+\begin{align*}
+V\left(j_{ph}\right) &= V_0 + c_1\cdot j_{ph} + c_2\cdot j_{ph}^2
+\end{align*}
+Fitting our data, we then had:
+\begin{align*}
+V\left(j_{ph}\right) \left[\text{V}\right]&= 0.573 + 0.0586 lg\left[j_{ph}\right] - 0.0566 lg\left[j_{ph}\right]^2\\
+\end{align*}
+Which had a normalized residual of 4.1541e-16. A linear term was not enough.\\
+
+\begin{figure}
+\includegraphics[scale=0.45]{PlotDensities_Xaxis_run2_.png}
+\caption{\label{fig:densityCurrent}Plot of densities of electrons, photo-electrons and ions when the current value is \(j_{ph} = 10^{-4}\) A/m$^3$.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[scale=0.45]{Plot_densities_relationship.png}
+\caption{\label{fig:densityCurrentRelation}Relation between ion and electron density for different currents, distributed from the center of the spacecraft.}
+\end{figure}
+
+The FIG. \ref{fig:densityCurrent} shows the density distribution for the ions, electrons and photo-electrons when the value of the current is equal to $10^{-4}$ A/m$^3$. One can notice the region behind the satellite, that demonstrates the wake formation, where the ion density is lower than the electron density.\par
+
+During the workshop we have also considered different cases for different current values. FIG. \ref{fig:densityCurrentRelation} shows the relations between ion density and total sum of electron densities for current values $j_{ph}=0$ A/m$^3$, $j_{ph}=10^{-5}$ A/m$^3$ and $j_{ph}=10^{-4}$ A/m$^3$. The main interest is the area behind the satellite, and that is why one can observe the plot from the center of the spacecraft to the end of the wake formation. There are no noticeable changes in the wakes, and we can conclude that the wake length has the constant value. From the profile picture we have estimated this variable and got the result equal to 11 cm.
+
+\begin{figure*}
+\includegraphics[width=1\textwidth]{pbody.png}
+\caption{The change in the spacecraft potential over time. Data from one simulation with no photo emission, and two simulations with photo-emission from the wake side on the body. $j_{ph}$ is the photo-emission density in A/m$^3$. \label{fig:potential_time}}
+\end{figure*}
+
+We may also analyze the temporal change of spacecraft potential, FIG \ref{fig:potential_time}, to see if photo emission changes has any effect the plasma frequencys interaction with the spacecraft.  From Eq. \ref{plasmafreq} the plasma frequency $\omega_{pe}$ is calculated to $17.84 \times 10^6$ rad/s. The frequency of the temporal change of spacecraft potential should be affected by this plasma frequency and therefore correlate with the plasma frequency. The potential frequency $\omega_{pbody}$ is $19.25 \times 10^6$ rad/s, looking at the average oscillation time. The periods corresponding to these two frequencies is $\mathrm{T}_{pe} = 3.5224 \times 10^{-7}$ s and $\mathrm{T}_{pbody} = 3.2639 \times 10^{-7}$ s The charging time for the spacecraft is the same for all three runs, approximately $4.5\mathrm{T}_{pe}$.
+
+\subsection{Change of plasma density}
+
+Now we have the basic situation when $j_{ph}= 1.0\cdot10^{-5}$ A/m$^3$, and the density is $1.0\cdot10^5$ particles/cm$^3$. So we keep the photo emission electron and decrease the the density to $1.0\cdot10^4$ particles/m$^3$ to see what happened here. The simulation result is shown in FIG. \ref{fig:profile_densities} - \ref{fig:end}.
+
+\begin{figure*}[!ht]
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[scale=0.3]{lowDensity_rhoe_x.png}
+\caption{The profile from the front of the spacecraft, the same direction as the flow.}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[scale=0.3]{lowDensity_rhoe_z.png}
+\caption{The profile from the side of the spacecraft, and is symmetric in both planes.}
+\end{subfigure}
+\caption{The situation when we have lowered the density by an order of 1 and the photo emission is $j_{ph} = 10^{-5}$ A/m$^3$} \label{fig:profile_densities}
+\end{figure*}
+
+\begin{figure}[!ht]
+\includegraphics[scale=0.45]{densityCompare.png}
+\caption{Relation between ion and electron density for different densities and same current.The red line shows Low density $j_{ph} = 10^{-5}$ A/m$^3$,the blue one shows high density $j_{ph} = 10^{-4}$ A/m$^3$} \label{fig:densitycompare}
+\end{figure}
+
+\begin{figure}[!ht]
+\includegraphics[scale=0.45]{x-potential_diffDensity.png}
+\caption{The potential near the spacecraft along X for different densities. \label{fig:end}}
+\end{figure}
+
+The FIG. \ref{fig:profile_densities} shows the wake profile of the low density situation. Compared to FIG. \ref{fig:profile_nocurrent}, we can also see the wake behind the spacecraft here. But the size of the wake doesn't seem as big as what we had in FIG. \ref{fig:profile_nocurrent}.\\
+
+And from the middle of the spacecraft in x-axis(parallel to the flow), we measured the density of the ion and the electron$(n_i$/$n_e)$. Here, the electron density include both the electron and the photo emission electron (FIG. \ref{fig:densitycompare}). From the graph, we can find that with the lower density, the wake length decreased, the same conclusion from the FIG. \ref{fig:profile_densities}.\\
+
+But we still need to focus on the potential of the spacecraft in FIG. \ref{fig:end}. The red line shows the potential of the low density. And it's much higher than the reference situation, while the current from the flow should by 90\% less.
+
+\begin{figure}[!ht]
+\includegraphics[scale=0.45]{pbody_lowDensity.png}
+\caption{the change in the spacecraft potential over time.\label{fig:DensityTime}}
+\end{figure}
+
+Finally, we tried to look at the charging of the spacecraft in time, shown in FIG. \ref{fig:DensityTime}. We see it has started to converge to a stable state.
+
+\subsection{Consistency test}
+
+In our simulation we have assumed some models could be valid. Let us look at the OML-model first. In our simulation we have:
+\begin{align*}
+v_D &= 41600 \, \, \text{m/s}\\
+c_s &= \sqrt{k T_e / \mu_i} = 9536.1417 \, \, \text{m/s}
+\end{align*}
+
+The Bohm criterion is therefore fulfilled for the parameters in our simulation. Calculating different free floating potentials for OML defined in Eq. \ref{eq:Boef} and Eq. \ref{eq:Pesceli} gives
+\begin{align*}
+\Psi_{fl,I} &= -0.695\text{V} \, \, \text{V}\\
+\Psi_{fl,II}&= -0.893 \text{V}\, \, \text{V}.
+\end{align*}
+This value we also got from our simulation when we did not have any photo-emission and static flow. This was found to be $\Psi_{sim} = -0.634$ V. Comparing to the free floating potential with or without presheath;
+\begin{align*}
+\Delta \Psi_{fl,I} &= \frac{0.695 \, \text{V} -0.634 \, \text{V}}{0.695 \, \text{V}} = 0.0878\\
+\Delta \Psi_{fl,II} &= \frac{0.893 \, \text{V} -0.634 \, \text{V}}{0.893 \, \text{V}} = 0.290
+\end{align*}
+So for our case we then have an relative error of 29\% when we do not have presheath in this model.\\
+
+\begin{figure}
+\includegraphics[scale=0.3]{gyroradius.png}
+\caption{The current stream for our simulation with photo-emission current set to $10^{-4}$ A/m$^3$. We calculated the radius using the line also shown in this figure.\label{fig:gyroradius}}
+\end{figure}
+
+We also wanted to check the analytic error from the grids, find the relative error for gyro-radius, plasma frequency and the Mach angle. In FIG \ref{fig:gyroradius} we have the current stream for one of the simulations, and we found the gyro-radius for both simulations with photo-emission current. These values was $14$ and $16$ cm for low and high photo-emission current respectively. Using the definition for the electron gyro-radius in Eq. \ref{eq:gyroradius}, we have then:
+\begin{align*}
+r_e &= 8.26 \, \, \text{cm}\\
+\Delta r_e &= \frac{15 \, \, \text{cm}- 8.26 \, \, \text{cm}}{8.26 \, \, \text{cm}} = 0.816
+\end{align*}
+In other words, a relative error of 81\%.\\
+
+We also found the Mach angle. Measuring using the density gradient as boundary, this angle was found to be 18.43 degrees. If we had the angle from the front of the rocket to the end of the visible wake, the angle was then 13.25 degrees. The true Mach angle for our simulation should be between these two values.\\
+
+We calculated the Mach number and then the theoretical Mach angle, using Eq. \ref{eq:Mach} and Eq. \ref{eq:MachAngle}. We also expanded the ion sound velocity to the adiabatic expression defined in Eq. \ref{eq:IonSpeed2}.
+\begin{align*}
+c_{s,I} &= 9536.1417 \, \, \text{m/s}\\
+c_{s,II} &= \sqrt{\frac{kT_e + \frac{5}{3} k T_i}{ M_i}} = 12911.997 \, \, \text{m/s}\\
+\mathcal{M}_{I} &= \frac{V_d}{c_s} = 4.3623513\\
+\mathcal{M}_{II} &= 3.2218099\\
+\Rightarrow \alpha_{I} &= 13.25 ^{\circ}\\
+\Rightarrow \alpha_{II} &= 18.0824065 ^{\circ}\\
+\end{align*}
+The adiabatic version of the Mach angle should be the closest to what we want. We then have the relative error:
+\begin{align*}
+\bar{\alpha} &= \frac{18.46^{\circ} + 13.25^{\circ}}{2} = 15.86^{\circ}\\
+\Delta \alpha &= \frac{15.86 ^{\circ}- 18.08^{\circ}}{18.08^{\circ}} = 0.123.
+\end{align*}
+
+We found the plasma frequency by looking at the frequency of the spacecraft potential in time, which was from the simulation$\omega_{pbody} = 19.28\times10^{6}$ rad/s and theoretically $17.84\times 10^{6}$ rad/s, as calculated above. This corresponded to a relative error of 8.1\%.
+
+\section{Discussion}
+
+As it is said before the plasma consists of negatively and positively charged particles. Under normal conditions the particles are in the equilibrium, or quasineutral state. In our simulations, we apply the external electromagnetic field and change velocity distributions, what causes a sheath formation and, in addition, wake formation behind the satellite. As the ions are not magnetized and they have in about 500 times heavier mass than electrons, one can theoretically consider the lack of ions in the wake and assume the near wake as an ion void region.\\
+
+However, the previous studies \cite{P1} and the numerical simulations showed that there are some ions trapped in the wake. As the angle of attack in the simulations is large, to be precise $90^{\circ}$, that is bigger than the calculated Mach angle($18^{\circ}$), this will affect the wake structure.\\
+
+Photo-emission has the possibility of having effect on the potential of spacecraft,but seems to have little relation to wake formation. Total electron density becomes larger but wake size or shape don't change. We have however seen that most of the theoretical values have small relative difference, so this effect on the potential is probably significant and not because of simulation errors.\\
+
+Especially the gyro-radius is a measurement we could have done wrong. Finding the correct line for the correct bending path was probably not done in the correct way, and we did not have time to check again. The fitted linear model for the potential then probably will be correct to the first order, assuming we have the same relative error for the frequency as the potential, $8\%$.\\
+
+The OML-model and floating potential are of our interest as well. Including the presheath in the formula (\ref{eq:Boef}) gave a result closer to the numerical result, and this should not be occurring since the presheath is a phenomenon in subsonic plasma, but we have supersonic plasma, given our Mach number. We expected the simulation with flow to give a less negative potential because the electrons would have higher velocity and therefore less electrons would be pulled into the spacecraft. In our simulations the debye length is just slightly bigger than the spacecraft and therefore the OML model is not appropriate for our simulations. We should however still see a similar result, since we are on the boundary of this domain for the other simulation with the hybrid model\cite{P7}.\\
+
+The change in photo-emission doesn't seem to affect the temporal characteristics of the spacecraft potential. The mean values change (less between no photo-emission and "low" photo-emission), but the period of the oscillations and amplitude variations do not differ. We have good correspondence between plasma frequency and potential frequency.\\
+
+Because of the density change, the charging time of the space craft seems to be longer than the simulation time. We have in other words no stable potential when we decreased the potential. The figures in other words could be explained because of this, and new simulation with fixed parameters could give us a consistent result. We however can see an indication that the potential will decrease when we lower the density, and the change is bigger than could be explained because of unfinished simulation. Wake profile probably is just reduced in size and still have the same form. The mach angle also seems to be the same. 
+
+\section{Conclusion}
+Under normal conditions the particles are in a quasineutral state and when we apply the external electromagnetic field and change the velocity distributions, we get changes in the sheath formation and wake formation. Some ions are trapped in the wake, even though the wake region should be an ion void region. Photo-emission has no effect on the wake. \\
+
+Photo-emission rather has an effect on the potential of the spacecraft. The OML-model gives us a analytic value for the floating potential, but the model does not fit our model, and therefore the analytic value is not accurate. But having no flow in the simulations gave a better result compared to the OML-model, and this was to be expected. \\
 
 The change in photo-emission affect the temporal characteristics of the spacecraft potential. This is seen in the mean value changing, but the period of the oscillations and the amplitude variations do not change, and therefore we get a good correspondence between plasma frequency and potential frequency. \\
 
